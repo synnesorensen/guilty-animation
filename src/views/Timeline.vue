@@ -17,21 +17,21 @@
         <div>
           <img
             src="https://media.istockphoto.com/id/813499652/photo/furry-british-cat-white-color-on-isolated-black-background.jpg?s=612x612&w=0&k=20&c=UGoYKMfcS3-EyM1NMWyuA_TxQ9XRUylm59HzujE-1nw="
-            ref="cat1"
+            ref="catLeft"
             class="object-scale-down w-full h-full"
           />
         </div>
         <div>
           <img
             src="https://media.istockphoto.com/id/468583653/photo/cat-portrait.jpg?s=612x612&w=0&k=20&c=-cMtH_bzO5nDy1sltTKbJ5JV_u1GXS7ki-CaD-ek0aA="
-            ref="cat2"
+            ref="catMiddle"
             class="object-scale-down w-full h-full"
           />
         </div>
         <div>
           <img
             src="https://s1.1zoom.me/big3/942/Cats_Leopard_cat_Gold_Black_background_Glance_530149_4915x3277.jpg"
-            ref="cat3"
+            ref="catRight"
             class="object-scale-down w-full h-full"
           />
         </div>
@@ -58,9 +58,9 @@ import { gsap } from "gsap";
 
 const heading = ref(null);
 const text = ref(null);
-const cat1 = ref(null);
-const cat2 = ref(null);
-const cat3 = ref(null);
+const catLeft = ref(null);
+const catMiddle = ref(null);
+const catRight = ref(null);
 let progressSlider: HTMLElement | null = null;
 
 const updateSlider = () => {
@@ -87,34 +87,30 @@ onMounted(() => {
       y: 100,
       duration: 2,
     })
-    .from(
-      text.value,
+    .from(text.value,
       {
         opacity: 0,
         duration: 2.5,
       },
-      "<.4"
+      "<0.4"
     )
-    .from(
-      cat2.value,
+    .from(catMiddle.value,
       {
         y: 300,
       },
-      "<.6"
+      "<0.6"
     )
-    .from(
-      cat3.value,
+    .from(catRight.value,
       {
         y: 300,
       },
-      "<.2"
+      "<0.2"
     )
-    .from(
-      cat1.value,
+    .from(catLeft.value,
       {
         y: 300,
       },
-      "<.2"
+      "<2"
     );
 });
 </script>

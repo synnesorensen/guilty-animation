@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from "vue-router";
 import GuiltyMorph from "./components/GuiltyMorph.vue";
-import Guilty from "./assets/Guilty.vue";
 </script>
 
 <template>
@@ -13,9 +12,6 @@ import Guilty from "./assets/Guilty.vue";
             <GuiltyMorph />
           </RouterLink>
         </div>
-        <!-- <div v-else>
-          <Guilty width="200" />
-        </div> -->
         <div class="my-10">
           <div class="flex items-start flex-wrap">
             <h1 class="text-5xl font-bold">
@@ -32,7 +28,8 @@ import Guilty from "./assets/Guilty.vue";
         </a>
       </header>
       <div class="flex flex-row items-center">
-        <nav class="w-full mb-20 px-24 text-xl text-left">
+        <nav class="w-full mb-20 pl-20 text-xl">
+          <RouterLink class="px-4" to="/">Home</RouterLink>
           <RouterLink class="px-4" to="/intro">Intro</RouterLink>
           <RouterLink class="px-4" to="/css-versus-js">Why GSAP?</RouterLink>
           <RouterLink class="px-4" to="/tween">Tween</RouterLink>

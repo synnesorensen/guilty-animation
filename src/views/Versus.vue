@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="overflow-hidden">
-      <p class="text-6xl font-bold pb-8" ref="heading">Why choose GreenSock?</p>
+      <p class="text-6xl font-bold pb-8" ref="heading">Why GreenSock?</p>
     </div>
     <div class="text-2xl text-white leading-10">
       <div ref="reason">
@@ -15,7 +15,6 @@
         <p>Controls</p>
         <p>Performance</p>
         <p>Compatibility</p>
-        <p>File size</p>
         <p>Price</p>
       </div>
     </div>

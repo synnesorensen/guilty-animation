@@ -76,22 +76,17 @@ onMounted(() => {
       pin: true,
       start: "top center",
       end: "bottom 70%",
-      markers: true
     },
   });
 
   gsap.from(img1.value, {
     x: "120%",
     duration: 1.5,
-    ease: "power4.easeOut",
+    ease: "Power4.easeOut",
     scrollTrigger: {
       trigger: img1.value,
       toggleActions: "play none none reverse",
       start: "top center",
-      onEnter: () => {
-        console.log("Starting 3");
-      },
-      markers: true,
     },
   });
 
@@ -99,30 +94,37 @@ onMounted(() => {
     x: "120%",
     duration: 2,
     rotation: 360,
-    ease: "power4.easeOut",
+    ease: "Power1.easeOut",
     scrollTrigger: {
       trigger: img2.value,
       toggleActions: "play none none reverse",
-      start: "top center",
-      onEnter: () => {
-        console.log("Starting 3");
-      },
-      markers: true,
+      start: "center center",
     },
   });
 
   gsap.from(img3.value, {
     x: "120%",
     duration: 2.5,
-    ease: "power4.easeOut",
+    ease: "Bounce.easeOut",
+    opacity: 0,
     scrollTrigger: {
       trigger: img3.value,
       toggleActions: "play none none reverse",
       start: "top center",
-      onEnter: () => {
-        console.log("Starting 3");
-      },
-      markers: true,
+    },
+  });
+
+  gsap.to(img4.value, {
+    x: "-20%",
+    scaleX: "100%",
+    scaleY: "100%",
+    duration: 2.5,
+    ease: "Power1.easeOut",
+    opacity: 100,
+    scrollTrigger: {
+      trigger: img3.value,
+      toggleActions: "play none none reverse",
+      start: "bottom center",
     },
   });
 });

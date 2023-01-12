@@ -32,7 +32,8 @@ onMounted(() => {
       yoyo: true,
       repeatDelay: 0.5,
       repeat: -1,
-      ease: "Rough.easeInOut",
+      ease: "Power2.easeInOut",
+      //ease: "none",
       stagger: {
         amount: 0.3,
       },
