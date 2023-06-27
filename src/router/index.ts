@@ -15,9 +15,9 @@ const router = createRouter({
       component: () => import("../views/Intro.vue"),
     },
     {
-      path: "/css-versus-JS",
-      name: "versus",
-      component: () => import("../views/Versus.vue"),
+      path: "/why-gsap",
+      name: "why",
+      component: () => import("../views/Why.vue"),
     },
     {
       path: "/tween",
@@ -48,6 +48,11 @@ const router = createRouter({
       path: "/svg-morph",
       name: "svg-morph",
       component: () => import("../views/Morph.vue"),
+    },
+    {
+      path: "/video",
+      name: "video",
+      component: () => import("../views/Video.vue"),
     },
   ],
 });

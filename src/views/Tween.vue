@@ -1,9 +1,9 @@
 <template>
   <section class="container">
     <div class="overflow-hidden">
-      <p class="text-6xl font-bold" ref="heading">What is a TWEEN?</p>
+      <p class="text-2xl md:text-4xl lg:text-6xl font-bold" ref="heading">What is a TWEEN?</p>
     </div>
-    <div class="flex flex-col my-10 text-xl tracking-wide" ref="">
+    <div class="flex flex-col my-10 text-base md:text-xl tracking-wide" ref="text">
       <p>
         Tweening is a short for <b>inbetweening</b> and it's the process of
         generating images that go between keyframes.
@@ -35,12 +35,21 @@ import { gsap } from "gsap";
 import SplitText from "gsap/SplitText";
 
 const heading = ref(null);
+const text = ref(null);
 gsap.registerPlugin(SplitText);
+let timeline = gsap.timeline();
+
 
 onMounted(() => {
-  gsap.from(heading.value, {
-    y: 100,
+  timeline
+  .from(heading.value, {
+    x: 1000,
     duration: 2,
-  });
+    ease: "power3.out",
+  })
+  .from(text.value, {
+    opacity: 0,
+    duration: 3
+  }, "<1");
 });
 </script>

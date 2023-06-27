@@ -1,6 +1,6 @@
 <template>
-  <main class="container">
-    <div class="mb-10 text-2xl">
+  <main class="mx-2 md:mx-8 lg:mx-24">
+    <div class="mb-10 text-base md:text-2xl">
       <p>
         Easing in animation is a transition method that modifies motion to make
         it less pronounced and jarring.
@@ -25,9 +25,9 @@ import { onMounted } from "vue";
 onMounted(() => {
   gsap.fromTo(
     ".block",
-    { x: "650" },
+    { x: "675" },
     {
-      x: "-100",
+      x: "-10",
       duration: 1,
       yoyo: true,
       repeatDelay: 0.5,

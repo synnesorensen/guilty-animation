@@ -5,7 +5,7 @@
     <div class="flex flex-row justify-between w-full overflow-hidden">
       <!-- Left column -->
       <div class="flex flex-col w-[400px]" ref="text1">
-        <p class="text-4xl">Scroll trigger demo</p>
+        <p class="text-base md:text-2xl lg:text-4xl">Scroll trigger demo</p>
       </div>
       <!-- Right column -->
       <div class="flex flex-col space-y-60">
@@ -56,7 +56,6 @@ const img4 = ref(null);
 
 gsap.registerPlugin(SplitText);
 gsap.registerPlugin(ScrollTrigger);
-let timeline = gsap.timeline();
 
 onMounted(() => {
   let split = new SplitText(heading.value, { type: "chars" });

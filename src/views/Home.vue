@@ -1,3 +1,15 @@
+<template>
+  <main class="container ml-12 md:ml-20 lg:ml-24 flex flex-col">
+    <div class="flex flex-row">
+      <div ref="textRef" class="text-2xl md:text-4xl lg:text-6xl font-bold mr-2 md:mr-3 lg:mr-4"></div>
+      <div ref="wordRef" class="text-2xl md:text-4xl lg:text-6xl font-bold mr-1"></div>
+      <div ref="cursorRef" class="text-green text-4xl font-bold md:text-6xl">
+        |
+      </div>
+    </div>
+  </main>
+</template>
+
 <script async setup lang="ts">
 import { ref, onMounted } from "vue";
 import { gsap } from "gsap";
@@ -46,15 +58,3 @@ onMounted(() => {
   });
 });
 </script>
-
-<template>
-  <main class="container ml-24 flex flex-col">
-    <div class="flex flex-row">
-      <div ref="textRef" class="text-4xl font-bold mr-4 md:text-6xl"></div>
-      <div ref="wordRef" class="text-4xl font-bold mr-1 md:text-6xl"></div>
-      <div ref="cursorRef" class="text-green text-4xl font-bold md:text-6xl">
-        |
-      </div>
-    </div>
-  </main>
-</template>

@@ -1,9 +1,14 @@
 <template>
   <section class="container">
     <div class="overflow-hidden">
-      <p class="text-6xl font-bold" ref="heading">Timeline</p>
+      <p class="text-2xl md:text-4xl lg:text-6xl font-bold" ref="heading">
+        Timeline
+      </p>
     </div>
-    <div class="flex flex-col my-10 text-xl tracking-wide" ref="text">
+    <div
+      class="flex flex-col my-4 md:my-10 text-base md:text-xl tracking-wide"
+      ref="text"
+    >
       <p>
         A Timeline is a powerful sequencing tool that acts as a container for
         tweens and other timelines, making it simple to control them as a whole
@@ -55,6 +60,7 @@
 <script async setup lang="ts">
 import { onMounted, ref } from "vue";
 import { gsap } from "gsap";
+import SplitText from "gsap/SplitText";
 
 const heading = ref(null);
 const text = ref(null);
@@ -62,6 +68,8 @@ const catLeft = ref(null);
 const catMiddle = ref(null);
 const catRight = ref(null);
 let progressSlider: HTMLElement | null = null;
+
+gsap.registerPlugin(SplitText);
 
 const updateSlider = () => {
   if (progressSlider) {
@@ -79,38 +87,45 @@ const update = () => {
 };
 
 onMounted(() => {
+  let split = new SplitText(heading.value, { type: "chars" });
   progressSlider = document.getElementById("progressSlider");
   (progressSlider as any).addEventListener("input", update);
 
   timeline
-    .from(heading.value, {
-      y: 100,
-      duration: 2,
+    .from(split.chars, {
+      y: "200%",
+      ease: "power1.out",
+      duration: 0.4,
+      stagger: 0.05,
     })
-    .from(text.value,
+    .from(
+      text.value,
       {
         opacity: 0,
         duration: 2.5,
       },
       "<0.4"
     )
-    .from(catMiddle.value,
+    .from(
+      catMiddle.value,
       {
         y: 300,
       },
       "<0.6"
     )
-    .from(catRight.value,
+    .from(
+      catRight.value,
       {
         y: 300,
       },
       "<0.2"
     )
-    .from(catLeft.value,
+    .from(
+      catLeft.value,
       {
         y: 300,
       },
-      "<2"
+      "<0.2"
     );
 });
 </script>
